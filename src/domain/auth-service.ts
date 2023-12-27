@@ -59,7 +59,7 @@ export const authService = {
         await emailsManager
             .sendEmailConfirmationMessage(email, newCode)
     },
-    async addRefreshTokenToBlacklist(refreshToken: RefreshTokenType) {
+    async addRefreshTokenToBlacklist(refreshToken: RefreshTokenType): Promise<boolean> {
         return await authRepository
             .addRefreshTokenToBlacklist(refreshToken)
     }
